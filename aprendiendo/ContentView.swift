@@ -23,6 +23,8 @@ struct ContentView: View {
 
     
   @State private var showingNewEventView = false
+@State private var searchText = ""
+
   
   init() {
       UINavigationBar.appearance().setCustomAppearance(background: UIColor(named: "AppBackground") ?? .blue)
@@ -37,16 +39,25 @@ struct ContentView: View {
                 Color("AppBackground")
                     .ignoresSafeArea() // Esto hará que el color llene toda la pantalla
                 
-                ScrollView {
-                    LazyVStack {
-                        ForEach(events) { event in
-                            EventView(event: event)
+                VStack {
+                    HStack {
+                                   Image(systemName: "magnifyingglass")
+                                   TextField("Buscar", text: $searchText)
+                                       .textFieldStyle(RoundedBorderTextFieldStyle())
+                                       .padding(.leading, 8)
+                               }
+                               .padding()
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(events) { event in
+                                EventView(event: event)
+                            }
+                      
                         }
-                  
+                        .padding()
                     }
-                    .padding()
+                    .navigationBarTitle("¿Recuerdas tu última vez?", displayMode: .inline)
                 }
-                .navigationBarTitle("¿Recuerdas tu última vez?", displayMode: .inline)
               VStack {
                       Spacer()
                       HStack {

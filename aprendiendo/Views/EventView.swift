@@ -9,6 +9,8 @@ struct EventView: View {
                 Text(event.title)
                     .font(.headline)
                     .foregroundColor(Color("TituloEvento"))
+                    .lineLimit(1) 
+                    .minimumScaleFactor(0.5)
                 Text(event.description)
                                         .font(.subheadline)
 
@@ -22,6 +24,8 @@ struct EventView: View {
                         Text("Hace: 4h 52m")
                             .font(.footnote)
                             .frame(maxWidth: .infinity, alignment: .leading)
+                            .lineLimit(1) // Esto asegura que el texto no se divida en dos líneas.
+                                        .minimumScaleFactor(0.5)
                         
                     }
                     Spacer()
@@ -33,6 +37,8 @@ struct EventView: View {
                         Text("04-11-2023")
                             .font(.footnote)
                             .frame(maxWidth: .infinity, alignment: .leading)
+                            .lineLimit(1) // Esto asegura que el texto no se divida en dos líneas.
+                                        .minimumScaleFactor(0.5)
                     }
                     
                 }
@@ -45,6 +51,8 @@ struct EventView: View {
                         Text("4 veces")
                             .font(.footnote)
                             .frame(maxWidth: .infinity, alignment: .leading)
+                            .lineLimit(1) // Esto asegura que el texto no se divida en dos líneas.
+                                        .minimumScaleFactor(0.5)
                         
                     }
                     Spacer()
@@ -56,6 +64,8 @@ struct EventView: View {
                         Text("Faltan 4h 5m")
                             .font(.footnote)
                             .frame(maxWidth: .infinity, alignment: .leading)
+                            .lineLimit(1) // Esto asegura que el texto no se divida en dos líneas.
+                                        .minimumScaleFactor(0.5)
                     }
                     
                 }
