@@ -9,6 +9,7 @@ struct NewEventView: View {
         VStack {
             Text("Crear nuevo evento")
                 .font(.headline)
+                
             
             Text("Introduce la descripción del evento:")
             

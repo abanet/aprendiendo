@@ -8,17 +8,62 @@ struct EventView: View {
             VStack(alignment: .leading) {
                 Text(event.title)
                     .font(.headline)
-                
+                    .foregroundColor(Color("TituloEvento"))
                 Text(event.description)
-                    .font(.subheadline)
+                                        .font(.subheadline)
+
+               
+                HStack {
+                    HStack {
+                        Image("Hace")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                        Text("Hace: 4h 52m")
+                            .font(.footnote)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                    }
+                    Spacer()
+                    HStack {
+                        Image("Calendario")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                        Text("04-11-2023")
+                            .font(.footnote)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    
+                }
+                HStack {
+                    HStack {
+                        Image("Veces")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                        Text("4 veces")
+                            .font(.footnote)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                    }
+                    Spacer()
+                    HStack {
+                        Image("Campana")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                        Text("Faltan 4h 5m")
+                            .font(.footnote)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    
+                }
+                    
+                                   
+                                   
                 
-                Text("Última vez: \(formattedDate(from: event.lastOccurrence))")
-                    .font(.footnote)
-                    .foregroundColor(.gray)
-                
-                Text("Número de veces: \(event.numberOfOccurrences)")
-                    .font(.footnote)
-                    .foregroundColor(.gray)
+               
             }
             
             Spacer()
@@ -29,9 +74,10 @@ struct EventView: View {
                 Image(systemName: "plus.circle.fill")
                     .resizable()
                     .frame(width: 50, height: 50)
-                    .foregroundColor(Color("AppBackground"))
+                    .foregroundColor(Color("NuevaOcurrencia"))
                   
             }
+            .padding(.leading, 4.0)
         }
         .padding()
         .background(Color("EventBackground"))
